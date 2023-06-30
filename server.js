@@ -1,81 +1,46 @@
+const path = require('path');
 const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-// const session = require('express-session');
+const session = require('express-session');
 const exphbs = require('express-handlebars');
-// const sequelize = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT || 3001;
 
-// Set up MySQL connection
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Chicken',
-    database: 'project_db'
-});
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// Connect to MySQL
-connection.connect((err) => {
-    if (err) throw err;
-    console.log('Connected to MySQL database');
-});
-
-// Set up Body Parser
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// Set up Handlebars
 const hbs = exphbs.create();
-app.engine(
-    'handlebars',
-    hbs.engine,
-);
+
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {
+      maxAge: 300000,
+      httpOnly: true,
+      secure: false,
+      sameSite: 'strict',
+    },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  };
+
+app.use(session(sess));
+
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Serve static files
-app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers'));
-// Home route
-// app.get('/', (req, res) => {
-//     res.render('index');
-// });
+app.use(routes);
 
-// // Login route (GET request)
-// app.get('/login', (req, res) => {
-//     res.render('login');
-// });
-
-// // Login route (POST request)
-// app.post('/login', (req, res) => {
-//     const { username, password } = req.body;
-//     const user = {
-//         username: username,
-//         password: password
-//     };
-
-//     // Save user data to the database
-//     connection.query('INSERT INTO users SET ?', user, (err, result) => {
-//         if (err) throw err;
-//         console.log('User data saved to the database');
-//         res.redirect('/dashboard');
-//     });
-// });
-
-// // Dashboard route
-// app.get('/dashboard', (req, res) => {
-//     // Fetch user data from the database
-//     connection.query('SELECT * FROM users', (err, results) => {
-//         if (err) throw err;
-//         res.render('dashboard', { users: results });
-//     });
-// });
-
-// Start the server
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+app.listen(PORT, () => {
+    console.log(`App listening on port ${PORT}!`);
+    sequelize.sync({ force: false });
+  });
