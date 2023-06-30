@@ -1,44 +1,89 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Match Maker</title>
 
-	<!-- CSS Style Link-->
+  <!-- CSS Style Link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css"/>
-</head>
-<body>
-    <div class="hero">
-		<div class="container">
 
-			<!-- Header -->
-			<header>
-				<div class="nav-links">
-					<a href="#">Home</a>
-					<a href="#">Movies</a>
-					<a href="#">Upcoming Movies</a>
-				</div>
 
-				<!-- <a href="#" class="logo">MovieMatchMaker</a> -->
+  </head>
+    <body>
 
-				<div class="icon">
-					<a href="#"><i class="fa-solid fa-magnifying glass"></i></a>
-					<a href="#"><i class="fa-regular fa-bell"</a>
-					<a href="#">Sign Up</a>
-				</div>
-			</header>
+      <!-- HEADING -->
+      <h1>Movies</h1>
 
-			<!-- Carousel -->
-			<div class="carousel">
-				<h1>Movies</h1>
-			</div>
+        <!-- NavBar -->
+        <nav>
+          <ul class="navbar">
+            <li class="navbar-item active"><a href="#">Home</a></li>
+            <li class="navbar-item"><a href="#">Movies</a></li>
+            <li class="navbar-item"><a href="#">TV Shows</a></li>
+            <li class="navbar-item"><a href="#">Sign Up</a></li>
+          </ul>
+        </nav>
 
-		</div>
-	</div>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+          </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            <div class="swiper-slide">
+              <img src="1.jpg" alt=""/>
+            </div>
+            </div>
+          <div class="swiper-pagination"></div>
+        </div>
 
-    <script type="javascript" src="script.js"></script>
-</body>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+var swiper = new Swiper(".mySwiper", {
+effect: "coverflow",
+grabCursor: true,
+centeredSlides: true,
+slidesPerView: "auto",
+coverflowEffect: {
+rotate: 15,
+stretch: 0,
+depth: 300,
+modifier: 1,
+slideShadows: true,
+},
+loop: true,
+});
+</script>
+
+<script type="javascript" src="script.js"></script>
+  </body>
 </html>
