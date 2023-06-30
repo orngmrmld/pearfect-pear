@@ -1,5 +1,5 @@
-// const router = require('express').Router();
-// const { User } = require('../../models');
+const router = require('express').Router();
+const { User } = require('../../models');
 
 // router.post('/', async (req, res) => {
 //   try {
@@ -15,6 +15,15 @@
 //     res.status(400).json(err);
 //   }
 // });
+
+router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findAll({})
+    return res.json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // router.post('/login', async (req, res) => {
 //   try {
@@ -58,4 +67,4 @@
 //   }
 // });
 
-// module.exports = router;
+module.exports = router;
