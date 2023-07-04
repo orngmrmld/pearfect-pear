@@ -19,6 +19,7 @@
     "express-session": "^1.17.3",
     "inquirer": "^8.2.4",
     "mysql": "^2.18.1",
-    "mysql2": "^3.3.5"
+    "mysql2": "^3.3.5",
+    "sequelize": "^6.32.1"
   }
 }
