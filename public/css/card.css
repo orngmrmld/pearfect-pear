@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: grey; 
+}
+
+.movie {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.restaurant {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+  
+}
+
+/*NavBar Design*/
+.navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .navbar-item {
+    margin: 0 10px;
+  }
+  .navbar-item a {
+    text-decoration: none;
+    color: black;
+  }
+  .navbar-item.active a {
+    font-weight: bold;
+  }
+  /* Navbar CSS code*/
+  .navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #98FB98;
+    padding: 10px;
+  }
+  .navbar-item {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .navbar-item a {
+    text-decoration: none;
+    color: #333;
+  }
+  .navbar-item.active a {
+    font-weight: bold;
+  }
+  a:hover {
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  main section {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 50px;
+    height: 400px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #98FB98;
+    color: #ffffff;
+}
