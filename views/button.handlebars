@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>User Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <style>
-        body {
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
+
     <section class="section">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-one-third">
                     <h1 class="title">User Login</h1>
-                    <form action="/login" method="POST">
+                    <form class="login-form">
                         <div class="field">
                             <label class="label">Username</label>
                             <div class="control">
-                                <input class="input" type="text" name="username" placeholder="Enter your username">
+                                <input id="username-login" class="input" type="text" name="username" placeholder="Enter your username">
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Password</label>
                             <div class="control">
-                                <input class="input" type="password" name="password" placeholder="Enter your password">
+                                <input id="password-login" class="input" type="password" name="password" placeholder="Enter your password">
                             </div>
                         </div>
                         <div class="field">
@@ -42,5 +30,4 @@
             </div>
         </div>
     </section>
-</body>
-</html>
+    <script src="js/login.js"></script>
