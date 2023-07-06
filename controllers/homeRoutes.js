@@ -4,7 +4,6 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
   try {
-    console.log(req.session);
     // Get all projects and JOIN with user data
     // const projectData = await Project.findAll({
     //   include: [
@@ -23,13 +22,13 @@ router.get('/', async (req, res) => {
     //   projects, 
     //   logged_in: req.session.logged_in 
     // });
-    res.render('button');
+    res.render('homepage');
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/register', async (req, res) => {
+router.get('/login', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     // const projectData = await Project.findAll({
@@ -49,7 +48,8 @@ router.get('/register', async (req, res) => {
     //   projects, 
     //   logged_in: req.session.logged_in 
     // });
-    res.render('registration');
+    console.log(req.session);
+    res.render('button');
   } catch (err) {
     res.status(500).json(err);
   }
@@ -107,7 +107,7 @@ router.get('/register', async (req, res) => {
 //   res.render('login');
 // });
 
-router.get('/cards', async (req, res) => {
+router.get('/cardinfo', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     // const projectData = await Project.findAll({
