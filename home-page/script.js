@@ -69,7 +69,7 @@ zipcodeInput.addEventListener('keyup', (event) => {
   }
 });
 
-// Display the stored zip code
+// Display stored zip code
 const storedZipCode = localStorage.getItem('searchedZipCode');
 if (storedZipCode) {
   console.log('Stored zip code:', storedZipCode);
@@ -81,5 +81,3 @@ recommendationElement.addEventListener('click', () => {
   const recommendedZipCode = recommendationElement.textContent.split(':')[1].trim();
   zipcodeInput.value = recommendedZipCode;
 });
-
-// eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NmVlMWQ3MjBiZTFmZTU1ZGIyNjljZjNhMjI0ZDA2ZCIsInN1YiI6IjY0OWJhMjkyOTYzODY0MDEzYTMyOGJjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rOay6VCKjklJe8o05Efj_HMuLs7I6uJBoKpA1f0-ipk
