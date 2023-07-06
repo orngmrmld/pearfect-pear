@@ -1,5 +1,5 @@
 const User = require('./User');
-const Movie = require('./Movie');
+//const Movie = require('./Movie');
 
 // User.hasMany(Project, {
 //   foreignKey: 'user_id',
@@ -10,4 +10,4 @@ const Movie = require('./Movie');
 //   foreignKey: 'user_id'
 // });
 
-module.exports = { User, Movie };
+module.exports = { User };

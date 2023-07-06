@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "inquirer": "^8.2.4",
     "mysql": "^2.18.1",
     "mysql2": "^3.3.5",
+    "nodemon": "^2.0.22",
     "sequelize": "^6.32.1"
   }
 }
