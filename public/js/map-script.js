@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<!--  I need help formatting this to handlebars - MR -->
-
-
-<body id="backgroundIMG" onload="initialize()">
-    <header class="column has-background-black has-text-right"> 
-        <a class=" material-symbols-rounded content" href="?reload">refresh</a>
-    </header>
-
-    <script >
         var maps;
         var services;
 
@@ -78,26 +62,6 @@
     
 
         google.maps.event.addListener(marker, 'click', function () {      
-            //localStorage.setItem("place-info",place.name)
             window.open(place.photos[0].getUrl(),"_blank");
         });
       }
-    </script>
-
-    <main>
-      <div>
-    <div class="pt-5"> 
-        <h3 class="content has-text-centered has-text-white hide">MAP:</h3><h3 id="place-info"></h3>
-    </div>
-    <!-- Google Map with markers -->
-    <div id="map" class="hide"></div>
-
-    </main>
-
- 
-   
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-    <script type="text/javascript" src="assets/js/script.js"></script>
-
-</body>
-</html>
