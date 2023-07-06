@@ -2,10 +2,11 @@ const options = {
   method: 'GET',
   headers: {
     'Accept': 'application/json',
-    'Authorization': 'AIzaSyBXoe4FUK0t3O6Ip1gLJaxYPF4f75WOud0'
+    'Authorization': 'GOOGLE_KEY'
   }
 }
 
+var geocoder;
 var maps;
 var services;
 
@@ -14,9 +15,11 @@ let map;
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
 
+  geocoder = new google.maps.Geocoder();
   map = new Map(document.getElementById("map"), {
     center: { lat: 35.640556, lng: -120.680008 },
     zoom: 8,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
   var input = document.getElementById('searchTextField');
@@ -81,6 +84,21 @@ google.maps.event.addListener(marker, 'click', function () {
 
 }
 
+//geocoder to turn zipcode into lat and long so it iniates from there
+function codeAddress(storedZipCode) {
+  geocoder.geocode( { 'address': storedZipCode}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      //Got result, center the map and put it out there
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+}
 
 initMap();
 
