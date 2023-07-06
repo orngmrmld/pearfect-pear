@@ -25,19 +25,15 @@ fetch('https://api.themoviedb.org/3/movie/upcoming', options)
       swiperSlide.appendChild(imgElement);
       swiperWrapper.appendChild(swiperSlide);
 
-      // Click event listener for movie poster
+      // Click event for movie poster
       imgElement.addEventListener('click', () => {
-        const movieId = results[i].id;
-        // Function to display movie details
-        displayMovieDetails(movieId);
+        console.log('Clicked on movie poster');
       });
     }
   })
   .catch(error => {
     console.log('Error:', error);
   });
-
-
 
 
 // Zip Code Search Button
@@ -53,10 +49,10 @@ const searchZipCode = () => {
     localStorage.setItem('searchedZipCode', zipcode);
     console.log('Zip code searched:', zipcode);
 
-    // Update the recommended zip code display
+    // Updates the zip code display of previous searched
     recommendationElement.textContent = `Recommended: ${zipcode}`;
 
-    // Clear the zip code from the search bar
+    // Clears zip code from search bar
     zipcodeInput.value = '';
   }
 };
@@ -76,7 +72,7 @@ if (storedZipCode) {
   recommendationElement.textContent = `Zipcode: ${storedZipCode}`;
 }
 
-// Click event for recommended zip code
+// Click event for zip code
 recommendationElement.addEventListener('click', () => {
   const recommendedZipCode = recommendationElement.textContent.split(':')[1].trim();
   zipcodeInput.value = recommendedZipCode;
