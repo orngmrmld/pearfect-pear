@@ -26,16 +26,18 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+  console.log("login route hit")
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
-
+    console.log('trydata');
+    const userData = await User.findOne({ where: { name: req.body.username } });
+    console.log('userData');
     if (!userData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-
+    console.log('randomdata');
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -44,7 +46,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-
+    console.log('passworddata');
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
