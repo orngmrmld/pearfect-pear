@@ -1,7 +1,7 @@
 const options = {
   method: 'GET',
   headers: {
-
+    'Accept': 'application/json'
   }
 }
 
@@ -43,7 +43,8 @@ function initialize() {
     let request = {
       location: place.geometry.location,
       radius: '5000',
-      type: "movie_theater"
+      keyword: 'dine_in',
+      type: "restaurant"
     }
 
     service = new google.maps.places.PlacesService(map);

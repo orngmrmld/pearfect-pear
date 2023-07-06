@@ -29,7 +29,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', op
       // Click event listener for movie poster
       imgElement.addEventListener('click', () => {
         const movieId = results[i].id;
-        const movieRating = results[i].rating;
+       // const movieRating = results[i].rating;
         // Function to display movie details
         displayMovieDetails(movieId);
         
@@ -40,7 +40,7 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', op
     console.log('Error:', error); 
   });
 
-  export{ movieRating, movieId, imageUrl };
+ // export{ movieRating, movieId, imageUrl };
 
 
 // Zip Code Search Button
@@ -57,7 +57,7 @@ const searchZipCode = () => {
     console.log('Zip code searched:', zipcode);
 
     // Update the recommended zip code display
-    recommendationElement.textContent = `Recommended: ${zipcode}`;
+    recommendationElement.textContent = `Zipcode: ${zipcode}`;
 
     // Clear the zip code from the search bar
     zipcodeInput.value = '';
