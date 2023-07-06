@@ -49,7 +49,7 @@ router.get('/login', async (req, res) => {
     //   logged_in: req.session.logged_in 
     // });
     console.log(req.session);
-    res.render('button');
+    res.render('login');
   } catch (err) {
     res.status(500).json(err);
   }
@@ -132,5 +132,32 @@ router.get('/cardinfo', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/register', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    // const projectData = await Project.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
+
+    // // Serialize data so the template can read it
+    // const projects = projectData.map((project) => project.get({ plain: true }));
+
+    // // Pass serialized data and session flag into template
+    // res.render('homepage', { 
+    //   projects, 
+    //   logged_in: req.session.logged_in 
+    // });
+    res.render('registration');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;

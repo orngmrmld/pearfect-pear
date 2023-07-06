@@ -2,6 +2,7 @@ const options = {
   method: 'GET',
   headers: {
     'Accept': 'application/json'
+    'Authorization': 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBXoe4FUK0t3O6Ip1gLJaxYPF4f75WOud0&libraries=places'
   }
 }
 

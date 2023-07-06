@@ -1,45 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>User Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <style>
-        body {
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-    <section class="section">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-one-third">
-                    <h1 class="title">User Login</h1>
-                    <form action="/login" method="POST">
-                        <div class="field">
-                            <label class="label">Username</label>
-                            <div class="control">
-                                <input class="input" type="text" name="username" placeholder="Enter your username">
-                            </div>
+<header>
+    <nav>
+        <ul class="navbar">
+            <li class="navbar-item"><a href="/">Home</a></li>
+            <li class="navbar-item"><a href="/cardinfo">Map</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+ 
+  
+                <h1 class="title">User Login</h1>
+                <form action="/login" method="POST">
+                    <div class="field">
+                        <label class="label">Username</label>
+                        <div class="control">
+                            <input class="input" type="text" name="username" placeholder="Enter your username">
                         </div>
-                        <div class="field">
-                            <label class="label">Password</label>
-                            <div class="control">
-                                <input class="input" type="password" name="password" placeholder="Enter your password">
-                            </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control">
+                            <input class="input" type="password" name="password" placeholder="Enter your password">
                         </div>
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary" type="submit">Login</button>
-                            </div>
-                            <div class btn>
-                                <a href="/register" class="button is-link">Register</a>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Login</button>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+                        <div class btn>
+                            <a href="/register" class="button is-link">Register</a>
+                        </div>
+                </form>
+            </div> 
+    </div>
+</section>
