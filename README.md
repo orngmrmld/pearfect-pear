@@ -1,5 +1,6 @@
 # PEARFECT PAIR
 
+## User Story
 
 ## Installation
 
@@ -14,7 +15,7 @@ ISC
 
 ## Links
 
-Github Repo: https://github.com/orngmrmld/project-2
+Github Repo: https://github.com/orngmrmld/pearfect-pear
 Heroku Link: https://perfect-pear-2-cb65697bbf0a.herokuapp.com/
 
 ## Web Page Snippet
