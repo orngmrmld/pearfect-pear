@@ -7,6 +7,9 @@ body {
     position: fixed;
     width: 100%;
 }
+nav {
+    color:aqua;
+}
 
 h1 {
     display: flex;
